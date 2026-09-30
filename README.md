@@ -52,7 +52,7 @@ keyPassword=your-key-password
 
 ## 维护者：发布新版本
 
-发布脚本在本机完成正式构建，并用 [GitHub CLI](https://cli.github.com/) 创建附带 APK 和 SHA-256 校验文件的 Release。它要求源码已经提交并推送、工作区干净、本机签名配置可用，且已执行 `gh auth login`。证书与密码只用于本机构建，不会作为源码或 Release 附件上传。
+发布脚本在本机完成正式构建，并通过 GitHub 官方 API 创建附带 APK 和 SHA-256 校验文件的 Release。它要求源码已经提交并推送、工作区干净、本机签名配置可用，且 Git 已登录 GitHub（例如可以正常执行 `git push`）。脚本从 Git 凭据管理器临时读取 GitHub 凭据，只用于此次 API 请求；Android 证书与密码只用于本机构建，不会作为源码或 Release 附件上传。
 
 ```powershell
 flutter pub get
